@@ -7,18 +7,20 @@
         <action_query>false</action_query>
         <action_update>true</action_update>
         <active>false</active>
-        <add_message>false</add_message>
-        <advanced>true</advanced>
+        <add_message>true</add_message>
+        <advanced>false</advanced>
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
-        <collection>x_58872_needit_needit</collection>
+        <collection>incident</collection>
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition/>
+        <filter_condition table="incident">priorityIN1,2^EQ<item display_value="1,2" endquery="false" field="priority" goto="false" newquery="false" operator="IN" or="false" value="1,2"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
         <is_rest>false</is_rest>
-        <message/>
-        <name>Set State Awaiting Approval</name>
+        <message><![CDATA[<p>Manager approval is needed before this Incident can be escalated. This ticket has been put on Hold and sent to your Manager for approval.</p>]]></message>
+        <name>Approval Needed Critcal 3</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -28,38 +30,27 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-	
-	// Set the State value to 14, Awaiting Approval
-	current.state = 14;
+
+	// Add your code here
+
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2017-04-05 19:19:07</sys_created_on>
+        <sys_created_on>2024-12-27 06:31:33</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>894b68480f0232000d030dbce1050e0f</sys_id>
-        <sys_mod_count>6</sys_mod_count>
-        <sys_name>Set State Awaiting Approval</sys_name>
+        <sys_id>b38bbfd8c3ba5610d1c95f2b2b0131b3</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Approval Needed Critcal 3</sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
-        <sys_update_name>sys_script_894b68480f0232000d030dbce1050e0f</sys_update_name>
+        <sys_update_name>sys_script_b38bbfd8c3ba5610d1c95f2b2b0131b3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-27 00:51:54</sys_updated_on>
-        <template/>
+        <sys_updated_on>2024-12-27 22:02:26</sys_updated_on>
+        <template>state=3^hold_reason=6^approval=Requested^assigned_toDYNAMIC54635e965f510100a9ad2572f2b4774c^EQ</template>
         <when>before</when>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=894b68480f0232000d030dbce1050e0f"/>
-    <sys_es_latest_script action="INSERT_OR_UPDATE">
-        <id>894b68480f0232000d030dbce1050e0f</id>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-12-27 00:03:35</sys_created_on>
-        <sys_id>55536a94c3f25610d1c95f2b2b0131d4</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-27 00:03:35</sys_updated_on>
-        <table>sys_script</table>
-        <use_es_latest>false</use_es_latest>
-    </sys_es_latest_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=b38bbfd8c3ba5610d1c95f2b2b0131b3"/>
 </record_update>
